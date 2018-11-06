@@ -1,0 +1,24 @@
+#docker.io/johnsondylan687/uber
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trace
+  labels:
+    app: trace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trace
+  template:
+    metadata:
+      labels:
+        app: trace
+    spec:
+      containers:
+      - name: trace
+        image: docker.io/johnsondylan687/uber 
+        ports:
+        - containerPort: 80
+
